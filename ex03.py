@@ -57,4 +57,53 @@ while b:
     b.pop()
     print(b)
 
+#id는 변수의 주소를 볼 수 있음.
+d=[1,2,3]
+e=id(d)
+print(e)
 
+f=[1,2,3]
+g = f
+f[1] = 4
+print(f)
+print(g)
+print(f is g) #같은 주소를 보고 있니?
+g = f[:]
+print(f is g) #슬라이싱해서 따로 넣으면 다른 값이 된다. 주소가 같지 않다.
+
+from copy import copy
+a = [1,2,3]
+b = copy(a)
+a[1] = 4
+print(id(a))
+print(id(b))
+
+
+print('=======================같은 출력 다른 코드 1=======================')
+#변수를 만드는 여러가지 방법
+a,b = ('python', 'life') #튜플 자료형
+print(a)
+print(b)
+
+print('=======================같은 출력 다른 코드2=======================')
+(a,b) = 'python', 'life'
+print(a)
+print(b)
+
+print('=======================같은 출력 다른 코드3=======================')
+[a,b] = ['python', 'life']
+print(a)
+print(b)
+
+print('----------------')
+a = b = 'hello'
+print(a)
+print(b)
+
+
+print('-----------------')
+a = 3
+b = 5
+a,b = b,a
+print(a)
+print(b)
